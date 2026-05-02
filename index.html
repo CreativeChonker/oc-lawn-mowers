@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCLawnMowers | Lawn Mower Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="top-nav">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="OCLawnMowers" /></a>
+        </div>
+        <div class="nav-links">
+          <a href="rentals.html">Rentals</a>
+          <a href="#contact" class="btn nav-btn">Contact Us</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Based in Ireland</span>
+        <h1>Lawn Mower Rentals Made Simple</h1>
+        <p>
+          Reliable, well-maintained lawn mowers available for short-term and
+          long-term hire.
+        </p>
+        <div class="hero-actions">
+          <a href="rentals.html" class="btn primary">View Available Mowers</a>
+          <a href="#contact" class="btn secondary">Contact Us</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <span class="section-label">About Us</span>
+      <h2>Professional Equipment. Local Service.</h2>
+      <div class="section-divider"></div>
+      <div class="about-inner">
+        <div class="about-text">
+          <p>
+            OCLawnMowers provides dependable lawn mower rentals for homeowners
+            and small properties across Ireland. All equipment is regularly
+            serviced, inspected, and easy to operate.
+          </p>
+          <p>
+            Whether you need a mower for an afternoon or a full week, we offer
+            flexible hire options to suit every job and budget.
+          </p>
+          <a href="rentals.html" class="btn primary">Browse Our Equipment</a>
+        </div>
+        <div class="about-image">
+          <img src="images/2.jpg" alt="Lawn mower equipment" />
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <div class="bg-light">
+      <section class="section">
+        <span class="section-label">Why Us</span>
+        <h2>Why Choose OCLawnMowers</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid why-grid">
+          <div class="card why-card">
+            <div class="why-icon-wrap">
+              <img src="images/1.png" alt="Well-maintained equipment" />
+            </div>
+            <p>Well-maintained equipment</p>
+          </div>
+
+          <div class="card why-card">
+            <div class="why-icon-wrap">
+              <img src="images/2.png" alt="Flexible hire options" />
+            </div>
+            <p>Flexible hire options</p>
+          </div>
+
+          <div class="card why-card">
+            <div class="why-icon-wrap">
+              <img src="images/3.png" alt="Local service" />
+            </div>
+            <p>Local and reliable service</p>
+          </div>
+
+          <div class="card why-card">
+            <div class="why-icon-wrap">
+              <img src="images/4.png" alt="Fair pricing" />
+            </div>
+            <p>Fair pricing</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <span class="section-label">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <div class="section-divider"></div>
+      <p class="section-text">
+        Get in touch to check availability or ask about our rental options.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info-block">
+          <h3>Our Details</h3>
+          <div class="contact-info-item">
+            <strong>Phone</strong>
+            <span>08X XXX XXXX</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>Email</strong>
+            <span>info@oclawnmowers.ie</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>Location</strong>
+            <span>[Town / County], Ireland</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>Hours</strong>
+            <span>Mon–Sat, 8:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. John Murphy" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What equipment are you interested in?" required></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send Enquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="#" class="footer-top-link">↑ Back to top</a>
+      <div class="footer-divider"></div>
+      <p>© 2026 <strong>OCLawnMowers</strong></p>
+      <p>Lawn mower rentals you can rely on</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
