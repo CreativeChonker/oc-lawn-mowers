@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OCLawnMowers | Sales, Service & Repairs</title>
+    <title>OC Lawn Mowers | Sales, Service & Repairs</title>
+    <link rel="icon" type="image/png" href="images/tab_logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -118,23 +119,19 @@
           <h3>Our Details</h3>
           <div class="contact-info-item">
             <strong>Phone</strong>
-            <span>08X XXX XXXX</span>
+            <span><a href="tel:0876118117" style="color:inherit;text-decoration:none;">087 611 8117</a></span>
           </div>
           <div class="contact-info-item">
             <strong>Email</strong>
-            <span>info@oclawnmowers.ie</span>
+            <span><a href="mailto:ochire@gmail.com" style="color:inherit;text-decoration:none;">ochire@gmail.com</a></span>
           </div>
           <div class="contact-info-item">
             <strong>Location</strong>
-            <span>[Town / County], Ireland</span>
-          </div>
-          <div class="contact-info-item">
-            <strong>Hours</strong>
-            <span>Mon–Sat, 8:00 AM – 6:00 PM</span>
+            <span>Golden Island, Athlone,<br>Co. Westmeath, N37AX90</span>
           </div>
         </div>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="https://formspree.io/f/mqenpzbr" method="post">
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="e.g. John Murphy" required />
@@ -144,8 +141,17 @@
             <input type="email" id="email" name="email" placeholder="you@example.com" required />
           </div>
           <div class="form-group">
+            <label for="service">Service Type</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Equipment Sales</option>
+              <option>Professional Servicing</option>
+              <option>Repairs</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="What equipment are you interested in?" required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your enquiry..."></textarea>
           </div>
           <button type="submit" class="btn primary">Send Enquiry</button>
         </form>
