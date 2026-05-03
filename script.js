@@ -15,3 +15,29 @@ document.querySelectorAll('.nav-links a').forEach(function (link) {
     if (btn) btn.classList.remove('open');
   });
 });
+
+// Scroll animations with Intersection Observer
+document.addEventListener('DOMContentLoaded', function() {
+  var observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -80px 0px'
+  };
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Apply scroll animation to specific elements
+  var elementsToAnimate = document.querySelectorAll(
+    '.section, .card, .about-inner, .contact-grid, .page-header'
+  );
+  elementsToAnimate.forEach(function(element) {
+    element.classList.add('scroll-fade');
+    observer.observe(element);
+  });
+});

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | OCLawnMowers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="top-nav">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="OCLawnMowers" /></a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#contact" class="btn nav-btn">Contact Us</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <span class="hero-badge">What We Offer</span>
+      <h1>Sales, Service & Repairs</h1>
+      <p>Comprehensive lawn mower solutions for every need</p>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="section">
+      <div class="grid rentals-grid">
+        <div class="card rental-card">
+          <img src="images/2.jpg" alt="Sales" />
+          <div class="rental-card-body">
+            <h3>Equipment Sales</h3>
+            <p class="rental-card-desc">Find the perfect lawn mower for your needs. We stock quality equipment from leading brands.</p>
+            <a href="#contact" class="btn primary full">Get a Quote</a>
+          </div>
+        </div>
+
+        <div class="card rental-card">
+          <img src="images/1.jpg" alt="Service" />
+          <div class="rental-card-body">
+            <h3>Professional Servicing</h3>
+            <p class="rental-card-desc">Regular maintenance keeps your equipment running smoothly. Annual servicing and check-ups available.</p>
+            <a href="#contact" class="btn primary full">Book Service</a>
+          </div>
+        </div>
+
+        <div class="card rental-card">
+          <img src="images/2.jpg" alt="Repairs" />
+          <div class="rental-card-body">
+            <h3>Expert Repairs</h3>
+            <p class="rental-card-desc">Fast and reliable repair service for all lawn mower types. Diagnosis and quote provided upfront.</p>
+            <a href="#contact" class="btn primary full">Request Repair</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="bg-light">
+      <section class="section" id="contact">
+        <span class="section-label">Get In Touch</span>
+        <h2>Contact Us</h2>
+        <div class="section-divider"></div>
+        <p class="section-text">
+          Ready to buy, service, or repair your lawn mower? Contact us today for more information.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info-block">
+            <h3>Our Details</h3>
+            <div class="contact-info-item">
+              <strong>Phone</strong>
+              <span>08X XXX XXXX</span>
+            </div>
+            <div class="contact-info-item">
+              <strong>Email</strong>
+              <span>info@oclawnmowers.ie</span>
+            </div>
+            <div class="contact-info-item">
+              <strong>Hours</strong>
+              <span>Mon–Sat, 8:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g. John Murphy" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Equipment Sales</option>
+                <option>Professional Servicing</option>
+                <option>Repairs</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your enquiry..."></textarea>
+            </div>
+            <button type="submit" class="btn primary">Send Enquiry</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="#" class="footer-top-link">↑ Back to top</a>
+      <div class="footer-divider"></div>
+      <p>© 2026 <strong>OCLawnMowers</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
