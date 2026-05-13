@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
   </head>
   <body>
     <!-- NAV -->
@@ -19,6 +20,7 @@
         </div>
         <div class="nav-links">
           <a href="index.html">Home</a>
+          <a href="index.html#gallery">Gallery</a>
           <a href="#contact" class="btn nav-btn">Contact Us</a>
         </div>
         <button class="hamburger" aria-label="Toggle menu">
@@ -88,7 +90,7 @@
         <h2>Contact Us</h2>
         <div class="section-divider"></div>
         <p class="section-text">
-          Contact us to check availability and rental details.
+          Need to buy a mower, arrange servicing, or require repairs? Contact us today.
         </p>
 
         <div class="contact-grid">
@@ -102,9 +104,17 @@
               <strong>Email</strong>
               <span><a href="mailto:ochire@gmail.com" style="color:inherit;text-decoration:none;">ochire@gmail.com</a></span>
             </div>
+            <div class="contact-info-item">
+              <strong>Location</strong>
+              <span>Golden Island, Athlone,<br>Co. Westmeath, N37AX90</span>
+            </div>
+            <div class="contact-info-item">
+              <strong>Facebook</strong>
+              <span><a href="https://www.facebook.com/p/OC-Lawnmowers-100057313306274/" target="_blank" rel="noopener noreferrer" class="social-link"><i class='bx bxl-facebook-circle'></i> OC Lawnmowers</a></span>
+            </div>
           </div>
 
-          <form class="contact-form" action="#" method="post">
+          <form class="contact-form" action="https://formspree.io/f/mqenpzbr" method="post">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="e.g. John Murphy" required />
@@ -114,18 +124,17 @@
               <input type="email" id="email" name="email" placeholder="you@example.com" required />
             </div>
             <div class="form-group">
-              <label for="equipment">Equipment of Interest</label>
-              <select id="equipment" name="equipment">
-                <option value="">Select an option...</option>
-                <option>Petrol Lawn Mower</option>
-                <option>Electric Lawn Mower</option>
-                <option>Grass Trimmer</option>
-                <option>Ride-On Mower</option>
+              <label for="service">Service Type</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Equipment Sales</option>
+                <option>Professional Servicing</option>
+                <option>Repairs</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Any questions or details about your rental?"></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your enquiry..."></textarea>
             </div>
             <button type="submit" class="btn primary">Send Enquiry</button>
           </form>
