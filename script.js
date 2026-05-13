@@ -1,3 +1,4 @@
+// Hamburger menu toggle
 document.querySelectorAll('.hamburger').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var nav = btn.closest('.nav-container').querySelector('.nav-links');
@@ -16,11 +17,25 @@ document.querySelectorAll('.nav-links a').forEach(function (link) {
   });
 });
 
+// Smooth scroll behavior for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var href = this.getAttribute('href');
+    if (href !== '#' && document.querySelector(href)) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
 // Scroll animations with Intersection Observer
 document.addEventListener('DOMContentLoaded', function() {
   var observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -80px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
   };
 
   var observer = new IntersectionObserver(function(entries) {
@@ -34,10 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Apply scroll animation to specific elements
   var elementsToAnimate = document.querySelectorAll(
-    '.section, .card, .about-inner, .contact-grid, .page-header'
+    '.section, .card, .about-inner, .contact-grid, .page-header, .hero-content'
   );
   elementsToAnimate.forEach(function(element) {
     element.classList.add('scroll-fade');
     observer.observe(element);
+  });
+});
+
+// Add button press feedback
+document.querySelectorAll('.btn').forEach(function(btn) {
+  btn.addEventListener('mousedown', function() {
+    this.style.transform = 'scale(0.98)';
+  });
+  btn.addEventListener('mouseup', function() {
+    this.style.transform = '';
+  });
+  btn.addEventListener('mouseleave', function() {
+    this.style.transform = '';
   });
 });
