@@ -934,6 +934,10 @@ body {
   .about-image {
     order: -1;
   }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -956,6 +960,15 @@ body {
 
   .section h2 {
     font-size: 1.6rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
   }
 
   .hamburger {
@@ -1001,8 +1014,27 @@ body {
   }
 
   .why-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+  }
+
+  .why-card {
+    padding: 2rem 1rem;
+  }
+
+  .why-icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.2rem;
+  }
+
+  .why-card i {
+    font-size: 1.75rem;
+  }
+
+  .why-card p {
+    font-size: 1rem;
+    line-height: 1.45;
   }
 }
 
