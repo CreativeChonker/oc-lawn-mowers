@@ -118,3 +118,106 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// Optional Google reviews loader (uses fallback cards when API data is not configured)
+document.addEventListener('DOMContentLoaded', function () {
+  var reviewsSection = document.querySelector('[data-google-reviews]');
+  if (!reviewsSection) {
+    return;
+  }
+
+  var apiKey = (reviewsSection.getAttribute('data-api-key') || '').trim();
+  var placeId = (reviewsSection.getAttribute('data-place-id') || '').trim();
+  var reviewList = reviewsSection.querySelector('[data-google-review-list]');
+  var ratingLabel = reviewsSection.querySelector('[data-google-rating]');
+  var countLabel = reviewsSection.querySelector('[data-google-count]');
+  var summaryStars = reviewsSection.querySelector('[data-google-summary-stars]');
+
+  if (!apiKey || !placeId || !reviewList || !ratingLabel || !countLabel || !summaryStars) {
+    return;
+  }
+
+  function clampStarCount(value) {
+    var normalized = Math.round(Number(value) || 0);
+    return Math.min(5, Math.max(0, normalized));
+  }
+
+  function buildStars(markupContainer, rating) {
+    var stars = '';
+    var activeStars = clampStarCount(rating);
+    for (var i = 0; i < 5; i += 1) {
+      stars += i < activeStars ? "<i class='bx bxs-star'></i>" : "<i class='bx bx-star'></i>";
+    }
+    markupContainer.innerHTML = stars;
+  }
+
+  function createReviewCard(review) {
+    var card = document.createElement('article');
+    card.className = 'card review-card';
+
+    var stars = document.createElement('div');
+    stars.className = 'review-stars';
+    stars.setAttribute('aria-label', (review.rating || 5) + ' star review');
+    buildStars(stars, review.rating || 5);
+
+    var text = document.createElement('p');
+    text.className = 'review-text';
+    text.textContent = review.text ? '"' + review.text + '"' : '"Great local service and support."';
+
+    var author = document.createElement('p');
+    author.className = 'review-author';
+    author.textContent = review.author || 'Google Customer';
+
+    card.appendChild(stars);
+    card.appendChild(text);
+    card.appendChild(author);
+    return card;
+  }
+
+  function parseApiReviews(payload) {
+    var parsed = [];
+    (payload.reviews || []).slice(0, 3).forEach(function (item) {
+      parsed.push({
+        author: item.authorAttribution && item.authorAttribution.displayName ? item.authorAttribution.displayName : 'Google Customer',
+        text: item.text && item.text.text ? item.text.text : '',
+        rating: Number(item.rating) || 5
+      });
+    });
+    return parsed;
+  }
+
+  fetch('https://places.googleapis.com/v1/places/' + encodeURIComponent(placeId), {
+    method: 'GET',
+    headers: {
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': 'displayName,rating,userRatingCount,reviews'
+    }
+  })
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error('Unable to load Google reviews');
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      var rating = Number(data.rating) || 0;
+      var ratingCount = Number(data.userRatingCount) || 0;
+      var reviews = parseApiReviews(data);
+
+      if (!reviews.length) {
+        return;
+      }
+
+      ratingLabel.textContent = rating ? rating.toFixed(1) + ' / 5 on Google' : 'Google Reviews';
+      countLabel.textContent = ratingCount ? ratingCount + ' verified ratings' : 'Recent Google customer reviews';
+      buildStars(summaryStars, rating || 5);
+
+      reviewList.innerHTML = '';
+      reviews.forEach(function (review) {
+        reviewList.appendChild(createReviewCard(review));
+      });
+    })
+    .catch(function () {
+      // Keep fallback cards when live Google data is unavailable.
+    });
+});
